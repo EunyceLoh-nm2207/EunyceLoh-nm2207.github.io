@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<link rel="stylesheet" href="../finalProject/css/css.css">
+<script defer type="text/javascript" src="../finalProject/appscripts/main.js"></script>
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://laul.org/wp-content/uploads/2021/12/Youth-1.png);
+  min-height: 75%;
+}
+
+.currentSituation {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+
+<!-- Links -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-dark-grey">
+    <div class="w3-col s3">
+      <a id="getHelp" class="w3-button w3-block w3-black"> Help, what should I do? </a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#currentSituation" class="w3-button w3-block w3-black">Current Situation</a>
+    </div>
+    <div class="w3-col s3">
+      <a id="predictors" href="#about" class="w3-button w3-block w3-black">Predictors</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">What can be done?</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-black" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag"></span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px"></span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">A Journey Through Juvenile Recidivism</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-dark-grey w3-large">
+
+
+<!-- Current Situation (trends) -->
+<div class="w3-container" id="currentSituation">
+  <div class="w3-content" style="max-width:700px">
+ 
+  
+    <h1> Session09 storyboard </h1>
+    <h1> Background </h1>
+My project focuses on the topic of juvenile recidivism, which refers to a youth offender’s return to committing criminal behaviour especially after receiving interventions for their prior offences. <br>
+Unfortunately, rates of juvenile recidivism have been on the rise in recent years and many factors come to play in explaining vulnerability to juvenile recidivism, from age to gender to many other social predictors
+
+<h1>Data</h1>
+<a href = "https://www.statista.com/statistics/1123887/singapore-juvenile-recidivism-rate/"> Plot 1: Trend of Juvenile Recidivism as a line chart </a> 
+
+<br> <a href = "https://data.gov.sg/dataset/msf-youth-homes?resource_id=d6ecf054-e9ac-423"> Plot 2: Age distribution as a bar chart </a>
+
+<br> <a href = "https://data.gov.sg/dataset/guidance-programme"> Plot 3: Gender distribution as a pie chart </a>
+
+<br> <a href = "https://journals-sagepub-com.libproxy1.nus.edu.sg/doi/epdf/10.1177/0093854808317270"> Plot 4: Predictors of recidivism as a bar chart!  </a>
+
+
+<h1> Problem Statement </h1>
+What can be done to further support youths affected by juvenile recidivism? 
+
+<h1> Project Documentation </h1>
+<a href="https://docs.google.com/document/d/1eu3-YN7pSv8H1t-aDj3SEAw-Bub9j6Mx26Ov7uPxVzI/edit?usp=sharing"> Project Documentation Google Docs </a>
+
+<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Current Situation</span></h5>
+
+
+   <br> Charlie says: 
+    <div class="w3-panel w3-leftbar w3-light-grey">  
+      <p id="SituationMessage"> <i> </i></p>
+    </div>
+  </div>
+</div>
+  
+    <div class="w3-row w3-center w3-card w3-padding w3-black">
+      <a href="javascript:void(0)" onclick="changeCharts(event, 'rates');" id="myLink">
+        <div class="w3-col s6 tablink"> Juvenile Recidivism Rates</div>
+      </a>
+      <a href="javascript:void(0)" onclick="changeCharts(event, 'cases');">
+        <div class="w3-col s6 tablink"> Distribution of Cases by Gender and Age</div>
+      </a>
+    </div>
+
+    <div id="rates" class="w3-container currentSituation w3-padding-48 w3-card w3-black">
+      <canvas id="rates-line-chart" width="400" height="400"></canvas> 
+    <p class="w3-center w3-border"> // Brief expanation of data, insights obtained and how it answers the research question will be written here </p>
+    </div>
+
+    <div id="cases" class="w3-container currentSituation w3-padding-48 w3-card w3-black">
+      <canvas id="age-bar-chart" width="400" height="400"></canvas> 
+      <div class="slidecontainer">
+        Pick a year! <input type="range" min="2010" max="2021" class="slider" id="updateAge" step="1">
+        <a id="year">  </a>
+      </div>
+      <canvas id="gender-pie-chart" width="400" height="400"></canvas> 
+    <p class="w3-center w3-border"> // Brief expanation of data, insights obtained and how it answers the research question will be written here </p>
+    </div>
+
+
+<!-- Predictors -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">What are predictors of youth recidivism?</span></h5>
+    Charlie says: 
+    <div class="w3-panel w3-leftbar w3-light-grey">  
+      <p id="predictorsMessage"> <i> </i></p>
+    </div>
+  </div>
+</div>
+<canvas id="predictors-bar-chart" width="100" height="100"></canvas> 
+<p class="w3-center w3-border"> // Brief expanation of data, insights obtained and how it answers the research question will be written here </p>
+
+
+<!-- What can be done Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">What can be done?</span></h5>
+    <p> Charlie says:</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">  
+      <p id="doneMessage"> <i> </i></p>
+    </div>
+
+  
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
