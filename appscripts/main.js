@@ -352,7 +352,7 @@ predictorsMessage();
 
 // y-axis labels -- various predictors of juvenile recidivism
 var predictorLabels = ["Reported Father Criminality", "History of Running Away From Home", "History of Aggression", "1 year Decrease in Age of First Criminal Offense"]
-var risk = [34, 34, 34, 34]; // corresponding bar chart values which are initially equal, but will change to the correct values once the user presses a button
+var risk = [0, 0, 0, 0]; // corresponding bar chart values which are initially equal, but will change to the correct values once the user presses a button
 
 // data object of the horizontal bar chart showing predictors of juvenile recidivism and their respective increase in percentage risk 
 const predictorDataObj = {
